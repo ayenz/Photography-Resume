@@ -15,7 +15,7 @@ class Header extends Component{
                   <li><a className="smoothscroll"  href="#about" title="about">About</a></li>
                   <li><a className="smoothscroll"  href="#works" title="works">Works</a></li>
                   <li><a className="smoothscroll"  href="#contact" title="contact">Contact</a></li>
-                  <li><a href="https://ayenz.github.io/" target="_blank" title="Another Resume">Software Engineering Resume</a></li>
+                  <li><a href="https://ayenz.github.io/" target="_blank" title="Another Resume" rel="noopener noreferrer">Software Engineering Resume</a></li>
               </ul>
           </nav>
 

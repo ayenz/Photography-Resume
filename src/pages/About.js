@@ -2,26 +2,19 @@ import React, { Component } from 'react';
 
 class About extends Component{
   render(){
-    if(this.props.data){
-        var name = this.props.data.main.name;
-        var description = this.props.data.main.description;
-        var profilepicture = <img src={this.props.data.main.profilepicture} alt="Profile Picture" />;
-        var bio = this.props.data.main.bio;
-        var bio2 = this.props.data.main.bio2;
-    }
 
     return(
       <section id="about" className="s-about target-section">
 
           <div className="row section-intro has-bottom-sep">
               <div className="col-six tab-full text-center">
-                  {profilepicture}
+                  <img src="images/profilepic.jpg" alt="Stillmen Vallian" />
               </div>
 
               <div className="col-six tab-full text-left">
                   <h3>About</h3>
                   <h1>More About Me</h1>
-                  <p className="lead">{description}</p>
+                  <p className="lead">A software engineer, photographer, video maker. Love to work in sadistic mode.</p>
               </div>
           </div>
 
@@ -30,9 +23,9 @@ class About extends Component{
               <div className="col-six tab-full left">
                   <h3>Howdy!</h3>
 
-                  <p>{bio}</p>
+                  <p>I'm fresh graduate from Parahyangan Catholic University majoring in Informatics Engineering. Apart from programming, I also love Photography. Photography is my hobby. I know photography since I was in high school (2010s). Until now, I'm still active in it. Some of my experiences such as documenting some campus events, concerts, endorsement shot, beauty & casual shot. Not only photo, I also making several videos. The videos that I made, usually an 'after movie' (every activity held) an events. I'm already familiar with some editing software like Adobe Photoshop, Premiere and Lightroom.</p>
 
-                  <p>{bio2}</p>
+                  <p>As a graduate in Informatics Engineering, I can use programming language like Java, PHP and HTML. Recently, I'm learning React.js (front-end framework) for self improvement. I made this website using React.js. For more information, you can visit my other resume page (link on the top right).</p>
               </div>
 
               <div className="col-six tab-full right">

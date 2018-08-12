@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 class Home extends Component{
   render(){
-    if(this.props.data){
-        var name = this.props.data.main.name;
-        var occupation= this.props.data.main.occupation;
-        var description= this.props.data.main.description;
-        var city= this.props.data.main.address.city;
-    }
 
     return(
       <section id="home" className="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/wallpaper.jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
@@ -22,9 +16,9 @@ class Home extends Component{
                    <h3>Hello There</h3>
 
                    <h1>
-                       I'm {name}. <br/>
-                       I'm a {occupation} <br/>
-                       based in {city}.
+                       I'm Stillmen Vallian. <br/>
+                       I'm a Photographer & Software Engineer <br/>
+                     based in Bandung.
                    </h1>
 
                    <div className="home-content__buttons">
