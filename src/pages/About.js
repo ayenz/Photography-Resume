@@ -23,7 +23,7 @@ class About extends Component{
               <div className="col-six tab-full left">
                   <h3>Howdy!</h3>
 
-                  <p>I'm fresh graduate from Parahyangan Catholic University majoring in Informatics Engineering. Apart from programming, I also love Photography. Photography is my hobby. I know photography since I was in high school (2010s). Until now, I'm still active in it. Some of my experiences such as documenting some campus events, concerts, endorsement shot, beauty & casual shot. Not only photo, I also making several videos. The videos that I made, usually an 'after movie' (every activity held) an events. I'm already familiar with some editing software like Adobe Photoshop, Premiere and Lightroom.</p>
+                  <p>I'm fresh graduate from Parahyangan Catholic University majoring in Informatics Engineering. Apart from programming, I also love Photography. Photography is my hobby. I know photography since I was in high school (2010s) and until now I'm still active in it. Some of my experiences such as documenting some campus events, concerts, endorsement shot, beauty & casual shot. Not only photo, I also making several videos. The videos that I made, usually an 'after movie' (every activity held) an events. I'm already familiar with some editing software like Adobe Photoshop, Premiere and Lightroom.</p>
 
                   <p>As a graduate in Informatics Engineering, I can use programming language like Java, PHP and HTML. Recently, I'm learning React.js (front-end framework) for self improvement. I made this website using React.js. For more information, you can visit my other resume page (link on the top right).</p>
               </div>
@@ -198,6 +198,18 @@ class About extends Component{
                       <div className="timeline__block">
                           <div className="timeline__bullet"></div>
                           <div className="timeline__header">
+                              <p className="timeline__timeframe">May 2017</p>
+                              <h3>DIES FTIS XXIV</h3>
+                              <h5>Documentation Staff</h5>
+                          </div>
+                          <div className="timeline__desc">
+                              <p>FTIS (Fakultas Teknologi Informasi dan Sains) 24th anniversary.</p>
+                          </div>
+                      </div>
+
+                      <div className="timeline__block">
+                          <div className="timeline__bullet"></div>
+                          <div className="timeline__header">
                               <p className="timeline__timeframe">September 2016</p>
                               <h3>DIES Teknik Informatika 20th 2016</h3>
                               <h5>Documentation Staff</h5>
@@ -225,6 +237,18 @@ class About extends Component{
                               <p className="timeline__timeframe">April 2016</p>
                               <h3>Malam Penghargaan UNPAR 2016 </h3>
                               <h5>Documentation & Publication Staff</h5>
+                          </div>
+                          <div className="timeline__desc">
+                              <p>Event held by LKM (Lembaga Kepresidenan Mahasiswa) UNPAR 2015 / 2016.</p>
+                          </div>
+                      </div>
+
+                      <div className="timeline__block">
+                          <div className="timeline__bullet"></div>
+                          <div className="timeline__header">
+                              <p className="timeline__timeframe">March 2016</p>
+                              <h3>Demosnesia 2016 </h3>
+                              <h5>Documentation  Staff</h5>
                           </div>
                           <div className="timeline__desc">
                               <p>Event held by LKM (Lembaga Kepresidenan Mahasiswa) UNPAR 2015 / 2016.</p>
