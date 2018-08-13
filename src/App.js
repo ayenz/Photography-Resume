@@ -8,25 +8,36 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import Photoswipe from './components/Photoswipe';
 
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom'
 
 class App extends Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      data: {}
+    }
+  }
+
+  componentDidMount(){
+    fetch('resumeData.json')
+    .then(d => d.json())
+    .then(d => {
+      this.setState({
+        data: d
+      })
+    })
+  }
 
   render(){
     return(
-      <Router>
-        <div className="App">
-          <Header />
-          <Home/>
-          <About/>
-          <Works/>
-          <Contact/>
-          <Footer/>
-          <Photoswipe />
-        </div>
-      </Router>
+      <div className="App">
+        <Header />
+        <Home data= {this.state.data.main}/>
+        <About data= {this.state.data.main} data2= {this.state.data.resume}/>
+        <Works/>
+        <Contact/>
+        <Footer/>
+        <Photoswipe />
+      </div>
     )
   }
 }

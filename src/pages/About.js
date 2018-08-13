@@ -2,7 +2,54 @@ import React, { Component } from 'react';
 
 class About extends Component{
   render(){
+    if (this.props.data) {
+      var shortBio=this.props.data.shortBio;
+      var bio=this.props.data.bio;
+      var bio2=this.props.data.bio2;
+      var bio3=this.props.data.bio3;
+      var bio4=this.props.data.bio4;
 
+      var skills=this.props.data.otherSkills.map(function(s, index){
+        return <li key={index}>
+                <div className={s.progress}><span>{s.percent}</span></div>
+                <strong>{s.name}</strong>
+               </li>
+      });
+
+      var otherSkills=this.props.data.otherSkills.map(function(s, index){
+        return <li key={index}>
+                <div className={s.progress}><span>{s.percent}</span></div>
+                <strong>{s.name}</strong>
+               </li>
+      })
+    }
+
+    if (this.props.data2) {
+      var education=this.props.data2.education.map(function(edu, index){
+        return <div className="timeline__block" key={index}>
+                  <div className="timeline__bullet"></div>
+                  <div className="timeline__header">
+                      <p className="timeline__timeframe">{edu.graduated}</p>
+                      <h3>{edu.school}</h3>
+                      <h5>{edu.degree}</h5>
+                  </div>
+                  <div className="timeline__desc">
+                      <p>{edu.description}</p>
+                  </div>
+              </div>
+      });
+
+      var organization=this.props.data2.organization.map(function(org, index){
+        return <div className="timeline__block" key={index}>
+                  <div className="timeline__bullet"></div>
+                  <div className="timeline__header">
+                      <p className="timeline__timeframe">{org.year}</p>
+                      <h3>{org.name}</h3>
+                      <h5>{org.position}</h5>
+                  </div>
+              </div>
+      });
+    }
     return(
       <section id="about" className="s-about target-section">
 
@@ -14,7 +61,7 @@ class About extends Component{
               <div className="col-six tab-full text-left">
                   <h3>About</h3>
                   <h1>More About Me</h1>
-                  <p className="lead">A software engineer, photographer, video maker. Love to work in sadistic mode.</p>
+                  <p className="lead">{shortBio}</p>
               </div>
           </div>
 
@@ -23,40 +70,26 @@ class About extends Component{
               <div className="col-six tab-full left">
                   <h3>Howdy!</h3>
 
-                  <p>I'm fresh graduate from Parahyangan Catholic University majoring in Informatics Engineering. Apart from programming, I also love Photography. Photography is my hobby. I know photography since I was in high school (2010s) and until now I'm still active in it. Some of my experiences such as documenting some campus events, concerts, endorsement shot, beauty & casual shot. Not only photo, I also making several videos. The videos that I made, usually an 'after movie' (every activity held) an events. I'm already familiar with some editing software like Adobe Photoshop, Premiere and Lightroom.</p>
+                  <p>{bio}</p>
 
-                  <p>As a graduate in Informatics Engineering, I can use programming language like Java, PHP and HTML. Recently, I'm learning React.js (front-end framework) for self improvement. I made this website using React.js. For more information, you can visit my other resume page (link on the top right).</p>
+                  <p>{bio2}</p>
+
+                  <p>{bio3}</p>
+
+                  <p>{bio4}</p>
               </div>
 
               <div className="col-six tab-full right">
                 <h3>I have Got Some skills.</h3>
 
                 <ul className="skill-bars">
-                    <li>
-                    <div className="progress percent75"><span>75%</span></div>
-                    <strong>Photographer</strong>
-                    </li>
-                    <li>
-                    <div className="progress percent70"><span>70%</span></div>
-                    <strong>Videographer</strong>
-                    </li>
+                    {skills}
                 </ul>
 
                 <h3>I have Got Some editing skills.</h3>
 
                 <ul className="skill-bars">
-                    <li>
-                    <div className="progress percent80"><span>80%</span></div>
-                    <strong>Adobe Photoshop</strong>
-                    </li>
-                    <li>
-                    <div className="progress percent90"><span>90%</span></div>
-                    <strong>Adobe Lightroom</strong>
-                    </li>
-                    <li>
-                    <div className="progress percent75"><span>75%</span></div>
-                    <strong>Adobe Premiere</strong>
-                    </li>
+                    {otherSkills}
                 </ul>
               </div>
 
@@ -78,18 +111,7 @@ class About extends Component{
 
               <div className="col-full tab-full left">
                   <div className="timeline">
-
-                      <div className="timeline__block">
-                          <div className="timeline__bullet"></div>
-                          <div className="timeline__header">
-                              <p className="timeline__timeframe">2014 - 2018</p>
-                              <h3>Parahyangan Catholic University</h3>
-                              <h5>Bachelor's degree, Information Technology</h5>
-                          </div>
-                          <div className="timeline__desc">
-                              <p>I took my Bachelor's of Information Technology at Parahyangan Catholic University and achieved a much more thorough education in the underlying theory, concepts, and science behind more complex programming. It was here that I discovered many new technologies to create application programming (web and mobile).</p>
-                          </div>
-                      </div>
+                      {education}
                   </div>
               </div>
 
@@ -100,51 +122,32 @@ class About extends Component{
               <div className="col-full tab-full left">
                   <div className="timeline">
 
-                    <div className="timeline__block">
-                        <div className="timeline__bullet"></div>
-                        <div className="timeline__header">
-                            <p className="timeline__timeframe">2016</p>
-                            <h3>Pemilu PM UNPAR 2016 </h3>
-                            <h5>IT Expert Team</h5>
-                        </div>
-                    </div>
-
-                    <div className="timeline__block">
-                        <div className="timeline__bullet"></div>
-                        <div className="timeline__header">
-                            <p className="timeline__timeframe">2015 - 2016</p>
-                            <h3>Unpar Apps Team</h3>
-                            <h5>Unpar Apps Promotion Manager</h5>
-                        </div>
-                    </div>
-
-                      <div className="timeline__block">
-                          <div className="timeline__bullet"></div>
-                          <div className="timeline__header">
-                              <p className="timeline__timeframe">2015 - 2016</p>
-                              <h3>Lembaga Kepresidenan Mahasiswa (LKM) UNPAR 2015 - 2016</h3>
-                              <h5>Staff Directorate General Informatics Technology</h5>
-                          </div>
-                      </div>
-
-                      <div className="timeline__block">
-                          <div className="timeline__bullet"></div>
-                          <div className="timeline__header">
-                              <p className="timeline__timeframe">2015 - 2016</p>
-                              <h3>POTRET Organization</h3>
-                              <h5>Vice Coordinator Media Division</h5>
-                          </div>
-                      </div>
+                    {organization}
                   </div>
               </div>
             </div>
 
             <div className="col-six">
-              <div className="col-full text-center">
-                  <h3>My Photography Experience</h3>
+              <div className="col-full tab-full text-center right">
+                  <h3>Work Experience</h3>
+                    <div className="timeline">
+
+                        <div className="timeline__block">
+                            <div className="timeline__bullet"></div>
+                            <div className="timeline__header">
+                                <p className="timeline__timeframe">September 2015</p>
+                                <h3>Anime Festival Asia (AFA) 2015</h3>
+                                <h5>Photographer (Professional Job)</h5>
+                            </div>
+                            <div className="timeline__desc">
+                                <p>Working under an event organizer named SOZO with a photographer job. Documenting the event for 3 days in the form of photos and videos.</p>
+                            </div>
+                        </div>
+                      </div>
               </div>
 
-              <div className="col-full tab-full right">
+              <div className="col-full tab-full text-center right">
+                <h3>Photography Experience</h3>
                   <div className="timeline">
 
                       <div className="timeline__block">

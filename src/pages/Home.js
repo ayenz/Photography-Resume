@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
+import 'font-awesome/css/font-awesome.min.css';
 
 class Home extends Component{
   render(){
-
+    if (this.props.data) {
+      var name = this.props.data.name;
+      var occupation = this.props.data.occupation;
+      var city = this.props.data.address.city;
+      var social = this.props.data.social.map(function(social, index){
+        return  <li key={index}>
+                  <a href={social.url}><i className={social.className} aria-hidden="true"></i><span>{social.name}</span></a>
+                </li>
+      })
+    }
     return(
       <section id="home" className="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/wallpaper.jpg" data-natural-width="3000" data-natural-height="2000" data-position-y="center">
 
@@ -16,9 +26,9 @@ class Home extends Component{
                    <h3>Hello There</h3>
 
                    <h1>
-                       I'm Stillmen Vallian. <br/>
-                       I'm a Photographer & Software Engineer <br/>
-                     based in Bandung.
+                       I'm {name}. <br/>
+                       I'm a {occupation} <br/>
+                     based in {city}.
                    </h1>
 
                    <div className="home-content__buttons">
@@ -41,21 +51,7 @@ class Home extends Component{
            </div>
 
            <ul className="home-social">
-               <li>
-                   <a href="https://www.facebook.com/stillmen.vallian"><i className="im im-facebook" aria-hidden="true"></i><span>Facebook</span></a>
-               </li>
-               <li>
-                   <a href="https://twitter.com/stillmenvallian"><i className="im im-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
-               </li>
-               <li>
-                   <a href="http://instagram.com/stillmen_jr"><i className="im im-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-               </li>
-               <li>
-                   <a href="https://github.com/ayenz/"><i className="im im-github" aria-hidden="true"></i><span>GitHub</span></a>
-               </li>
-               <li>
-                   <a href="https://www.linkedin.com/in/stillmen-vallian/"><i className="im im-linkedin" aria-hidden="true"></i><span>Linkedin</span></a>
-               </li>
+               {social}
            </ul>
 
        </section>
